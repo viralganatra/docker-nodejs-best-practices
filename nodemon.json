@@ -1,0 +1,4 @@
+{
+  "watch": ["bin/www", "src"],
+  "exec": "node --inspect=0.0.0.0:9229 ./bin/www"
+}

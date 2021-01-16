@@ -1,0 +1,18 @@
+# docker-compose.yml
+version: "3.8"
+services:
+  app:
+    build:
+      context: .
+      target: ${NODE_ENV}
+      args:
+        - NODE_ENV=${NODE_ENV}
+    environment:
+      - NODE_ENV=${NODE_ENV}
+      - SERVER_PORT=${SERVER_PORT}
+    ports:
+      - "3000:${SERVER_PORT}"
+      - "9229:9229"
+    volumes:
+      - .:/node/app:delegated
+      - /node/app/node_modules

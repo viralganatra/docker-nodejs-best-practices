@@ -1,0 +1,11 @@
+*.log
+
+# Coverage directory used by tools like istanbul
+coverage
+*.lcov
+
+# Dependency directories
+node_modules/
+
+# Optional eslint cache
+.eslintcache
