@@ -13,7 +13,7 @@ This is a set of good defaults and best practices when working with Node.js and 
 
 * **Efficient images** - Only NPM packages are installed inside the container.
 * **Zero config startup** - Use abstracted commands to build and start your app.
-* **Debugging support** - Node runs with the inspect flag on the standard port (9229).
+* **Debugging support** - Node runs with the inspect flag on the standard port (9229) and VSCode integration provided.
 * **Easy local/Docker development** - Ability to run your app both within Docker and locally without conflicts with NPM packages.
 * **Nodemon** - Automatically restart Node on file changes.
 * **Edit locally while running Docker** - Source code is bind mounted into the container.
