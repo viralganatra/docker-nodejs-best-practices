@@ -13,22 +13,22 @@ export COMPOSE_DOCKER_CLI_BUILD=1
 .PHONY: build-dev build-dev-no-cache start start-detached stop shell
 
 build-dev: ##@dev Build the application for dev
-	docker-compose build
+	docker compose build
 
 build-dev-no-cache: ##@dev Build the application for dev without using cache
-	docker-compose build --no-cache
+	docker compose build --no-cache
 
 start: ##@dev Start the development environment
-	docker-compose up
+	docker compose up
 
 start-detached: ##@dev Start the development environment (detached)
-	docker-compose up -d
+	docker compose up -d
 
 stop: ##@dev Stop the development environment
-	docker-compose down
+	docker compose down
 
 shell: ##@dev Go into the running container (the app name should match what's in docker-compose.yml)
-	docker-compose exec app /bin/sh
+	docker compose exec app /bin/sh
 
 ###################################################################################################
 ## HELP
