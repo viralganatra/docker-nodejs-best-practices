@@ -10,13 +10,19 @@ export COMPOSE_DOCKER_CLI_BUILD=1
 ###################################################################################################
 ## DEV
 ###################################################################################################
-.PHONY: build-dev build-dev-no-cache start start-detached stop shell
+.PHONY: build-dev build-dev-no-cache build-test start start-detached stop shell
 
 build-dev: ##@dev Build the application for dev
 	docker compose build
 
 build-dev-no-cache: ##@dev Build the application for dev without using cache
 	docker compose build --no-cache
+
+build-test: ##@dev Build the application to run tests
+	docker build \
+		--build-arg NODE_ENV=production \
+		--target test \
+		-t app-test:1.00 .
 
 start: ##@dev Start the development environment
 	docker compose up

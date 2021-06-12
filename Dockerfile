@@ -11,15 +11,14 @@ USER node
 # ---------------------------------------
 FROM base AS development
 
-ARG NODE_ENV=development
 ENV SERVER_PORT=3000
-ENV NODE_ENV=${NODE_ENV}
 ENV PATH /node/node_modules/.bin:$PATH
 EXPOSE $SERVER_PORT 9229
 
 COPY --chown=node:node package*.json ./
 
 RUN \
+  NODE_ENV=development && \
   npm ci && \
   npm cache clean --force
 
