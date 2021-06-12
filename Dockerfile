@@ -1,6 +1,6 @@
 # Base stage
 # ---------------------------------------
-FROM node:14.15-alpine3.12 AS base
+FROM node:14.17-alpine3.13 AS base
 
 # This get shared across later stages
 WORKDIR /node
